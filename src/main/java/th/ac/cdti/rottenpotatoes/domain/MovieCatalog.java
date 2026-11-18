@@ -1,5 +1,6 @@
 package th.ac.cdti.rottenpotatoes.domain;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,18 +12,29 @@ public final class MovieCatalog {
   }
 
   public List<Movie> byRating(Rating rating) {
-    return List.of();
+    return movies.stream()
+        .filter(movie -> movie.rating() == rating)
+        .sorted()
+        .toList();
   }
 
   public List<String> titlesSorted() {
-    return List.of();
+    return movies.stream()
+        .sorted()
+        .map(Movie::title)
+        .toList();
   }
 
   public List<Movie> newestFirst(int limit) {
-    return List.of();
+    return movies.stream()
+        .sorted(Comparator.comparing(Movie::releaseDate).reversed())
+        .limit(limit)
+        .toList();
   }
 
   public Optional<Movie> findByTitle(String title) {
-    return Optional.empty();
+    return movies.stream()
+        .filter(movie -> movie.title().equalsIgnoreCase(title))
+        .findFirst();
   }
 }
