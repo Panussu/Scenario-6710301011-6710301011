@@ -1,0 +1,36 @@
+Read the intent.md below and write a requirements spec for it as spec.md.
+
+1. List the functional requirements as numbered statements (REQ-1, REQ-2, ...). Each one must be testable.
+2. Write 3 user stories in the Connextra form (As a ..., So that ..., I want ...), each with acceptance criteria.
+3. For the first story, write Gherkin scenarios: one happy path and at least one sad path.
+4. List every assumption you made that is not in the intent, and every area of concern.
+
+Do not write code. Keep to what the intent asks for.
+
+--- intent.md ---
+
+# Intent: ช่วยให้ผู้ปกครองเลือกหนังให้ลูกได้เร็วขึ้น
+
+อ้างอิงคำตอบของลูกค้าตัวอย่างในใบงาน L3
+
+## Problem
+
+รายการหนังมีหลายเรื่อง ผู้ปกครองต้องเปิดดูทีละเรื่องเพื่อเช็กเรต จึงใช้เวลานานกว่าจะเจอเรื่องที่อยากเลือกให้ลูก
+
+## Proposed outcome
+
+ผู้ปกครองเลือกเรตเองได้และเห็นเฉพาะหนังที่ตรงกับเรตที่เลือก เมื่อเปิดรายการทั้งหมดให้เห็นหนังใหม่ก่อน
+
+## Affected users and systems
+
+ผู้ใช้หลักคือผู้ปกครองที่เลือกหนังให้ลูก คนดูทั่วไปก็ใช้ตัวกรองได้ ส่วนที่เกี่ยวข้องคือรายการหนังใน Rotten Potatoes
+
+## Constraints
+
+ใช้เรต G, PG, PG-13, R และ NC-17 ผู้ใช้ไม่ต้องล็อกอิน และระบบไม่เก็บข้อมูลส่วนตัว
+งานส่วนนี้ใช้ Java โดยไม่มีฐานข้อมูล
+
+## Open questions
+
+- ถ้าไม่มีหนังตรงเรตที่เลือก ควรแสดงอะไร?
+- ผู้ใช้ควรเลือกเรตได้มากกว่าหนึ่งเรตพร้อมกันไหม?
